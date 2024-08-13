@@ -1,11 +1,12 @@
 package com.sam.ecomm_part2.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.annotation.Generated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
@@ -13,10 +14,9 @@ import java.util.Date;
 
 @Document
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Product {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
